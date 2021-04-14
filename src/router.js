@@ -16,7 +16,7 @@ const Router = () => {
 
       setPrevious(location.pathname);
     }
-  }, [previous, location]);
+  }, [location]); //eslint-disable-line
 
   return (
     <Switch>
