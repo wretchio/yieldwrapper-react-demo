@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Route, Switch, useLocation } from 'react-router-dom';
 
@@ -8,9 +8,15 @@ import Second from './views/Second';
 const Router = () => {
   let location = useLocation();
 
+  const [previous, setPrevious] = useState('');
+
   useEffect(() => {
-    window.yieldwrapper.initialize();
-  }, [location]);
+    if (previous !== location.pathname) {
+      window.yieldwrapper.initialize();
+
+      setPrevious(location.pathname);
+    }
+  }, [previous, location]);
 
   return (
     <Switch>
