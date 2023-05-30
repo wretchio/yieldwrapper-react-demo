@@ -12,7 +12,7 @@ ReactDOM.render(
         <Link to="/">START</Link>
       </li>
       <li style={{ display: 'inline', padding: '1em' }}>
-        <Link to="/other">OTHER</Link>
+        <Link to="/dynamic">DYNAMIC</Link>
       </li>
     </ul>
     <Router />

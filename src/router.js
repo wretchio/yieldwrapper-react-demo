@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 import { Route, Switch, useLocation } from 'react-router-dom';
 
-import First from './views/First';
-import Second from './views/Second';
+import Start from './views/Start';
+import Dynamic from './views/Dynamic';
 
 const Router = () => {
   let location = useLocation();
@@ -12,7 +12,9 @@ const Router = () => {
 
   useEffect(() => {
     if (previous !== location.pathname) {
-      window.yieldwrapper.initialize();
+      window.yieldwrapper.cmd.push(() => {
+        window.yieldwrapper.refresh();
+      });
 
       setPrevious(location.pathname);
     }
@@ -21,10 +23,10 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <First />
+        <Start />
       </Route>
-      <Route exact path="/other">
-        <Second />
+      <Route exact path="/dynamic">
+        <Dynamic />
       </Route>
     </Switch>
   );

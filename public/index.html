@@ -5,21 +5,15 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
     <title></title>
-
-    <!-- START CMP IMPLEMENTATION -->
-    <script type="text/javascript" async="true">
+    <script>
       (function () {
-        var host = window.location.hostname;
+        var host = 'matchi.tv';
         var element = document.createElement('script');
         var firstScript = document.getElementsByTagName('script')[0];
-        var url =
-          'https://quantcast.mgr.consensu.org/choice/vH08kHEkEKmEq/www.newsner.com/choice.js';
+        var url = 'https://quantcast.mgr.consensu.org'.concat('/choice/', 'D-85Hn1qxbGHe', '/', host, '/choice.js');
         var uspTries = 0;
         var uspTriesLimit = 3;
         element.async = true;
@@ -59,11 +53,7 @@
             if (!args.length) {
               return queue;
             } else if (args[0] === 'setGdprApplies') {
-              if (
-                args.length > 3 &&
-                args[2] === 2 &&
-                typeof args[3] === 'boolean'
-              ) {
+              if (args.length > 3 && args[2] === 2 && typeof args[3] === 'boolean') {
                 gdprApplies = args[3];
                 if (typeof args[2] === 'function') {
                   args[2]('set', true);
@@ -168,17 +158,15 @@
         }
       })();
     </script>
-    <!-- END CMP IMPLEMENTATION -->
 
     <script>
-      window.yieldwrapper = { URL: 'wayke.se' };
+      window.yieldwrapper = window.yieldwrapper || {
+        cmd: [],
+        url: 'matchi.tv',
+      };
     </script>
 
-    <script
-      async
-      type="application/javascript"
-      src="https://cdn.yieldwrapper.com/yieldwrapper.min.js"
-    ></script>
+    <script async type="application/javascript" src="http://localhost:1234/yieldwrapper.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
