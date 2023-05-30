@@ -2,18 +2,14 @@ const First = () => {
   window.yieldwrapper.cmd.push(() => {
     window.yieldwrapper.registerSlot({
       element: 'ad-panorama',
-      type: 'panorama',
     });
 
     window.yieldwrapper.registerSlot({
       element: 'ad-panorama',
-      type: 'panorama',
     });
 
     window.yieldwrapper.registerSlot({
       element: 'ad-infeed',
-      type: 'infeed',
-      force: 'panorama',
     });
   });
 
